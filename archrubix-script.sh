@@ -225,11 +225,44 @@ echo "Getting the latest arcolinux mirrors file"
 
 sudo wget https://github.com/arcolinux/arcolinux_repo/raw/main/x86_64/arcolinux-mirrorlist-git-23.06-01-any.pkg.tar.zst -O /tmp/arcolinux-mirrorlist-git-23.06-01-any.pkg.tar.zst
 sudo pacman -U --noconfirm --needed /tmp/arcolinux-mirrorlist-git-23.06-01-any.pkg.tar.zst
-echo '
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 
-#[arcolinux_repo_testing]
-#SigLevel = PackageRequired DatabaseNever
-#Include = /etc/pacman.d/arcolinux-mirrorlist
+echo '
+[athena-repository]
+SigLevel = Optional TrustAll
+#Include = /etc/pacman.d/athena-mirrorlist
+Server = https://athena-os.github.io/$repo/$arch
+
+[cachyos]
+SigLevel = Optional TrustAll
+#Include = /etc/pacman.d/cachyos-mirrorlist
+Server = https://mirror.cachyos.org/repo/$arch/$repo
+
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
+
+[exodia-repo]
+SigLevel = Optional TrustAll
+Server = https://exodia-os.github.io/$repo/$arch
+
+[Exodia-PenTest-Repo]
+SigLevel = Optional TrustAll
+Server = https://exodia-os.github.io/$repo/$arch
+
+[exodia-community-repo]
+SigLevel = Optional TrustAll
+Server = https://exodia-os.github.io/$repo/$arch
+
+[exodia-testing-repo]
+SigLevel = Optional TrustAll
+Server = https://exodia-os.github.io/$repo/$arch
+
+[arcolinux_repo_testing]
+SigLevel = PackageRequired DatabaseNever
+Include = /etc/pacman.d/arcolinux-mirrorlist
 
 [arcolinux_repo]
 SigLevel = PackageRequired DatabaseNever
@@ -244,7 +277,7 @@ SigLevel = PackageRequired DatabaseNever
 Include = /etc/pacman.d/arcolinux-mirrorlist' | sudo tee --append /etc/pacman.conf
 
 
-sudo pacman -Syyu archlinux-tweak-tool-dev-git obs-studio vivaldi steam bottles libvirtd wine wine-mono discord-update-skip-git kate qemu-full virt-manager gnome-boxes flatpak flatpak-kcm nix nix-init flatpak-builder nix-docs flatpak-docs pacseek yay thorium-browser-bin vim linux-lqx-headers autocpu-freq --noconfirm
+sudo pacman -Syyu archlinux-tweak-tool-dev-git obs-studio vivaldi steam bottles libvirtd wine wine-mono discord-update-skip-git kate qemu-full virt-manager gnome-boxes flatpak flatpak-kcm nix nix-init flatpak-builder nix-docs flatpak-docs pacseek yay thorium-browser-bin vim linux-lqx-headers autocpu-freq athena-mirrorlist athena-keyring cachyos-mirrorlist cachyos-keyring --noconfirm
 
 
 sudo systemctl enable --now libvirtd
