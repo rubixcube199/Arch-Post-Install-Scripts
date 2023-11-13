@@ -252,7 +252,7 @@ Server = https://exodia-os.github.io/$repo/$arch
 SigLevel = Optional TrustAll
 Server = https://exodia-os.github.io/$repo/$arch
 
-[exodia-community-repo]
+[exodia-community-repo]d
 SigLevel = Optional TrustAll
 Server = https://exodia-os.github.io/$repo/$arch
 
@@ -277,9 +277,23 @@ SigLevel = PackageRequired DatabaseNever
 Include = /etc/pacman.d/arcolinux-mirrorlist' | sudo tee --append /etc/pacman.conf
 
 
-sudo pacman -Syyu archlinux-tweak-tool-dev-git obs-studio vivaldi steam bottles libvirtd wine wine-mono discord-update-skip-git kate qemu-full virt-manager gnome-boxes flatpak flatpak-kcm nix nix-init flatpak-builder nix-docs flatpak-docs pacseek yay thorium-browser-bin vim linux-lqx-headers autocpu-freq athena-mirrorlist athena-keyring cachyos-mirrorlist cachyos-keyring --noconfirm
+sudo pacman -Syyu archlinux-tweak-tool-dev-git obs-studio vivaldi steam bottles libvirtd wine wine-mono discord-update-skip-git kate qemu-full virt-manager gnome-boxes flatpak flatpak-kcm nix nix-init flatpak-builder nix-docs flatpak-docs pacseek yay thorium-browser-bin vim linux-lqx-headers autocpu-freq athena-mirrorlist athena-keyring cachyos-mirrorlist cachyos-keyring alhp-mirrorlist alhp-keyring --noconfirm
 
 
 sudo systemctl enable --now libvirtd
+
+echo '
+
+[core-x86-64-v3]
+Include = /etc/pacman.d/alhp-mirrorlist
+
+[extra-testing]
+Include = /etc/pacman,d/mirrorlist
+
+[extra-x86-64-v3]
+Include = /etc/pacman.d/alhp-mirrorlist' | sudo tee --append /etc/pacman.conf
+
+
+sudo pacman -Syu
 
 reboot
