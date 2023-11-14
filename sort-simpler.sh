@@ -13,3 +13,11 @@ sudo ./strap.sh
 sudo rm -rf /etc/pacman.conf
 
 sudo mv ~/configs/pacman.conf /etc/pacman.conf
+
+sudo mv ~/configs/athena-mirrorlist /etc/pacman.d/
+
+sudo mv ~/configs/cachyos-mirrorlist /etc/pacman.d/
+
+sudo mv ~/configs/alhp-mirrorlist /etc/pacman.d/
+
+sudo pacman -Syu
