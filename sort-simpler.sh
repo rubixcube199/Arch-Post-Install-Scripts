@@ -1,4 +1,4 @@
-sudo wget https://bit.ly/getarcolinux-keys && sudo chmod +x get-arcolinux-keys && sudo ./get-arcolinux-keys && sudo pacman -Syu archlinux-tweak-tool-dev-git
+sudo wget https://bit.ly/get-arcolinux-keys && sudo chmod +x get-arcolinux-keys && sudo ./get-arcolinux-keys && sudo pacman -Syu archlinux-tweak-tool-dev-git
 
 sudo pacman -S yay pacseek git wget curl --noconfirm --needed
 
