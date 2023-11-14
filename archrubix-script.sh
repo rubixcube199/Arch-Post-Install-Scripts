@@ -266,6 +266,8 @@ SigLevel = PackageRequired DatabaseNever
 Include = /etc/pacman.d/arcolinux-mirrorlist' | sudo tee --append /etc/pacman.conf
 
 
+sudo pacman -Sy
+
 sudo pacman -Syyu archlinux-tweak-tool-dev-git obs-studio vivaldi steam bottles libvirtd wine wine-mono discord-update-skip-git kate qemu-full virt-manager gnome-boxes flatpak flatpak-kcm nix nix-init flatpak-builder nix-docs flatpak-docs pacseek yay thorium-browser-bin vim linux-lqx-headers autocpu-freq athena-mirrorlist athena-keyring cachyos-mirrorlist cachyos-keyring alhp-mirrorlist alhp-keyring --noconfirm
 
 
