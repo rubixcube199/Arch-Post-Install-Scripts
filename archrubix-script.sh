@@ -207,20 +207,10 @@ blackarch_setup()
 
 blackarch_setup
 
-#!/bin/bash
-
-######################################################################################################################
-
 sudo pacman -S wget --noconfirm --needed
-
-echo "Getting the ArcoLinux keys from the ArcoLinux repo"
 
 sudo wget https://github.com/arcolinux/arcolinux_repo/raw/main/x86_64/arcolinux-keyring-20251209-3-any.pkg.tar.zst -O /tmp/arcolinux-keyring-20251209-3-any.pkg.tar.zst
 sudo pacman -U --noconfirm --needed /tmp/arcolinux-keyring-20251209-3-any.pkg.tar.zst
-
-######################################################################################################################
-
-echo "Getting the latest arcolinux mirrors file"
 
 sudo wget https://github.com/arcolinux/arcolinux_repo/raw/main/x86_64/arcolinux-mirrorlist-git-23.06-01-any.pkg.tar.zst -O /tmp/arcolinux-mirrorlist-git-23.06-01-any.pkg.tar.zst
 sudo pacman -U --noconfirm --needed /tmp/arcolinux-mirrorlist-git-23.06-01-any.pkg.tar.zst
@@ -294,6 +284,9 @@ Include = /etc/pacman.d/alhp-mirrorlist' | sudo tee --append /etc/pacman.conf
 
 
 sudo pacman -Syu mercury-browser-bin ame discord-canary discord-canary-update-skip-git
+
+discord-canary-update-skip
+discord-update-skip
 
 sudo git clone https://github.com/rubixcube199/Wallpapers
 
