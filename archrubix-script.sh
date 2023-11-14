@@ -252,7 +252,7 @@ Server = https://exodia-os.github.io/$repo/$arch
 SigLevel = Optional TrustAll
 Server = https://exodia-os.github.io/$repo/$arch
 
-[exodia-community-repo]d
+[exodia-community-repo]
 SigLevel = Optional TrustAll
 Server = https://exodia-os.github.io/$repo/$arch
 
@@ -294,6 +294,10 @@ Include = /etc/pacman,d/mirrorlist
 Include = /etc/pacman.d/alhp-mirrorlist' | sudo tee --append /etc/pacman.conf
 
 
-sudo pacman -Syu
+sudo pacman -Syu mercury-browser-bin ame discord-canary discord-canary-update-skip-github
+
+sudo git clone https://github.com/rubixcube199/Wallpapers
+
+sudo mv ~/Wallpapers /usr/share
 
 reboot
