@@ -1,5 +1,4 @@
 #!/bin/sh
-# strap.sh - install and setup BlackArch Linux keyring
 
 # mirror file to fetch and write
 MIRROR_F="blackarch-mirrorlist"
@@ -294,7 +293,7 @@ Include = /etc/pacman,d/mirrorlist
 Include = /etc/pacman.d/alhp-mirrorlist' | sudo tee --append /etc/pacman.conf
 
 
-sudo pacman -Syu mercury-browser-bin ame discord-canary discord-canary-update-skip-github
+sudo pacman -Syu mercury-browser-bin ame discord-canary discord-canary-update-skip-git
 
 sudo git clone https://github.com/rubixcube199/Wallpapers
 
