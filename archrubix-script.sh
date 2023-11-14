@@ -292,4 +292,7 @@ sudo git clone https://github.com/rubixcube199/Wallpapers
 
 sudo mv ~/Wallpapers /usr/share
 
+sudo git clone https://aur.archlinux.org/guix-installer.github
+sudo chmod 777 guix-installer
+
 reboot
