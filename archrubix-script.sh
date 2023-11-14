@@ -1,5 +1,10 @@
 #!/bin/sh
 
+echo '
+
+This Script is broken, use at your own risk'
+
+
 # mirror file to fetch and write
 MIRROR_F="blackarch-mirrorlist"
 
